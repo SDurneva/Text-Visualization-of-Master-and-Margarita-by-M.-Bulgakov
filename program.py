@@ -111,6 +111,7 @@ def make_bags(stops):  # для каждой главы создает bag of wo
     i = 1
     n = 1
     print(files)
+    allwords = []
     for file in files:
         f = open(directory + file, 'r', encoding='utf-8')
         i += 1
@@ -121,22 +122,25 @@ def make_bags(stops):  # для каждой главы создает bag of wo
         c = conn.cursor()
         command = 'CREATE TABLE IF NOT EXISTS chapt' + str(n) + ' (word TEXT, frequency INTEGER)'
         c.execute(command)
-        done = []
         a1 = []
         for word in a:
             if word not in stops:
                 a1.append(word)
-        allwords = []
+        done = []
+        a2 = []
         for word in a1:
-            allwords.append(word)
+            a2.append(morph.parse(word)[0].normal_form)
+            allwords.append(morph.parse(word)[0].normal_form)
+        for word in a2:
             if word not in done:
                 comm = 'INSERT INTO chapt' + str(n) + ' (word, frequency) VALUES (?, ?)'
-                c.execute(comm, (word, a1.count(word)))
+                c.execute(comm, (word, a2.count(word)))
                 conn.commit()
                 done.append(word)
             else:
                 continue
         n += 1
+
     c.close()
     conn.close()
 
@@ -151,35 +155,4 @@ if __name__ == "__main__":
    main()
 
 
-# DROP TABLE chapt1;
-# DROP TABLE chapt2;
-# DROP TABLE chapt3;
-# DROP TABLE chapt4;
-# DROP TABLE chapt5;
-# DROP TABLE chapt6;
-# DROP TABLE chapt7;
-# DROP TABLE chapt8;
-# DROP TABLE chapt9;
-# DROP TABLE chapt10;
-# DROP TABLE chapt11;
-# DROP TABLE chapt12;
-# DROP TABLE chapt13;
-# DROP TABLE chapt14;
-# DROP TABLE chapt15;
-# DROP TABLE chapt16;
-# DROP TABLE chapt17;
-# DROP TABLE chapt18;
-# DROP TABLE chapt19;
-# DROP TABLE chapt20;
-# DROP TABLE chapt21;
-# DROP TABLE chapt22;
-# DROP TABLE chapt23;
-# DROP TABLE chapt24;
-# DROP TABLE chapt25;
-# DROP TABLE chapt26;
-# DROP TABLE chapt27;
-# DROP TABLE chapt28;
-# DROP TABLE chapt29;
-# DROP TABLE chapt30;
-# DROP TABLE chapt31;
-# DROP TABLE chapt32;
+#
