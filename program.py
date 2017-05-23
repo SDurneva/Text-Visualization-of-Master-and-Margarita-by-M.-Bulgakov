@@ -3,6 +3,7 @@ import os
 import filesort
 import pymorphy2
 import sqlite3
+import json
 
 morph = pymorphy2.MorphAnalyzer()
 
@@ -140,19 +141,45 @@ def make_bags(stops):  # для каждой главы создает bag of wo
             else:
                 continue
         n += 1
-
     c.close()
     conn.close()
+
+
+def count_char_names():  # для героев подсчитывает кол.-во их упоминаний в каждой главе, создает для них по словарю
+    chars = json.loads((open('/Users/sea_fog/Documents/github/coursework/names.json', 'r', encoding='utf-8')).read())
+    charstransl = ['Берлиоз', 'Маргарита', 'Мастер', 'Воланд', 'Иван Бездомный', 'Иешуа Га-Ноцри', 'Понтий Пилат',
+                   'Коровьев-Фагот', 'Азазелло', 'Абадонна', 'Александр Рюхин', 'Аркалий Аполлонович Семплеяров',
+                   'Соков', 'Никанор Иванович Босой', 'Бегемот', 'Стравинский', 'Римский', 'Афраний',
+                   'Арчибальд Арчибальдович', 'барон Майгель', 'Гелла', 'Бенгальский', 'Иосиф Каифа', 'Иуда',
+                   'Левий Матвей', 'Лиxодеев', 'Фрида', 'Василий Степанович Ласточкин', 'Варенуха']
+    directory = '/Users/sea_fog/Documents/github/coursework/chapters'
+    files = filesort.sortfiles(os.listdir(directory))
+    n = 1
+    for file in files:
+        charqs = []
+        for person in chars:
+            charq = len(re.findall(person, open(directory + '/' + file, 'r', encoding='utf-8').read()))
+            if charq in range(1, 2):
+                charq = 0
+            charqs.append(str(charq))
+        dicti = dict(zip(charstransl, charqs))
+        conn = sqlite3.connect('/Users/sea_fog/Documents/github/coursework/database.db')
+        c = conn.cursor()
+        command = 'CREATE TABLE IF NOT EXISTS chapt' + str(n) + '_freq (nom TEXT, frequency INTEGER)'
+        c.execute(command)
+        for key, value in dicti.items():
+            comm = 'INSERT INTO chapt' + str(n) + '_freq (nom, frequency) VALUES (?, ?)'
+            c.execute(comm, (key, value))
+            conn.commit()
+        n += 1
 
 
 def main():
 #    chapters()
 #    loop_open()
-    make_bags(load_stopwords())
+    count_char_names()
 
 
 if __name__ == "__main__":
    main()
 
-
-#
