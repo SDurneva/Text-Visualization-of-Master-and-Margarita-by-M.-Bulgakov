@@ -1,0 +1,100 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Главы</title>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+
+      {% for i in range(1, 34) %}
+      google.charts.setOnLoadCallback(chapt{{ i }});
+      {% endfor %}
+      {% for key, value in chars %}
+
+      function chapt{{ loop.index }}() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Персонаж');
+        data.addColumn('number', 'Встречаемость');
+        data.addRows([{{ value | safe}}]);
+
+        var options = {title:'{{ key }}',
+                       width: 450,
+                       height: 400,
+                       is3D: true};
+
+        var chart = new google.visualization.PieChart(document.getElementById('chapt{{ loop.index }}'));
+        chart.draw(data, options);
+      }
+      {% endfor %}
+    </script>
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='begemot.png') }}"
+  </head>
+  <body>
+<nav class="navbar navbar-static-top" >
+  <div class="navbar-default container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ main_url }}">
+        <img alt="M&M" src="{{ url_for('static', filename='begemot.png') }}" width="85" height="60" align="bottom">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">... и как</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="{{ keywords_url }}">... и какими словами </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ words_url }}">... и как длинно: главы </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
+          </ul>
+          </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Погоня </a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#">Другие места</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+      <table class="table borderless" align="center">
+      <tr>
+          {% for m in range(1, 34, 3) %}
+        <td><div id="chapt{{ m }}" ></div></td>
+        <td><div id="chapt{{ m + 1 }}" ></div></td>
+        <td><div id="chapt{{ m + 2}}"></div></td>
+      </tr>
+          {% endfor %}
+    </table>
+      <p align="center">2017, Школа лингвистики НИУ ВШЭ</p>
+  </body>
+</html>
+

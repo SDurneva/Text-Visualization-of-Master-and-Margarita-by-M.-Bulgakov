@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главные слова</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='begemot.png') }}"
+</head>
+<body>
+<nav class="navbar navbar-static-top" >
+  <div class="navbar-default container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ main_url }}">
+        <img alt="M&M" src="{{ url_for('static', filename='begemot.png') }}" width="85" height="60" align="top">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">... и как</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="{{ keywords_url }}">... и какими словами </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ words_url }}">... и как длинно: главы </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
+          </ul>
+          </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Погоня </a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#">Другие места</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div id="chart_div" align="center"></div>
+</body>
+</html>
+</title>
+</head>
+<body>
+<table class="table borderless" align="center">
+      <tr>
+        <td><!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
+<div style='width:auto;height:auto;'><!-- You may use this wrapping div to restrict the height or width -->
+	<script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/2492152/private/ede12f9425f347d0ee058db8f771542b/embed.js'></script>
+	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2492152/private/ede12f9425f347d0ee058db8f771542b' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;1&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
+</div>
+            <p><a href='https://worditout.com/word-cloud/2492152/private/ede12f9425f347d0ee058db8f771542b' title='See &quot;1&quot; on WordItOut.com'></a></p></td>
+        <td><!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
+<div style='width:auto;height:auto;'><!-- You may use this wrapping div to restrict the height or width -->
+	<script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/2492135/private/939066154bf805ab7d8e6614f7fbebeb/embed.js'></script>
+	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2492135/private/939066154bf805ab7d8e6614f7fbebeb' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;2&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
+</div>
+<p><a href='https://worditout.com/word-cloud/2492135/private/939066154bf805ab7d8e6614f7fbebeb' title='See &quot;2&quot; on WordItOut.com'></a></p></td>
+        <td><!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
+<div style='width:400;height:400;'><!-- You may use this wrapping div to restrict the height or width -->
+	<script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/2492092/private/a42182f152584ab40eb394d6a83cc044/embed.js'></script>
+	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2492092/private/a42182f152584ab40eb394d6a83cc044' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;1&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
+</div>
+<p><a href='https://worditout.com/word-cloud/2492092/private/a42182f152584ab40eb394d6a83cc044' title='See &quot;1&quot; on WordItOut.com'></a></p></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+</body>
+</html>

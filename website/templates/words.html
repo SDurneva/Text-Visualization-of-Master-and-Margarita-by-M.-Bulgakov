@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Предложения</title>
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Главы', 'Слов', { role: 'style' }],
+        ['Глава 1. Никогда не разговаривайте с неизвестными', 3371, '#336633'],
+        ['Глава 2. Понтий Пилат', 6723, '#990000'],
+        ['Глава 3. Седьмое доказательство', 1353, '#336633'],
+        ['Глава 4. Погоня', 2139, '#336633'],
+        ['Глава 5. Было дело в Грибоедове', 3380, '#336633'],
+        ['Глава 6. Шизофрения, как и было сказано', 2240, '#336633'],
+        ['Глава 7. Нехорошая квартира', 3093, '#336633'],
+        ['Глава 8. Поединок между профессором и поэтом', 2566, '#336633'],
+        ['Глава 9. Коровьевские штуки', 2487, '#336633'],
+        ['Глава 10. Вести из Ялты', 3043, '#336633'],
+        ['Глава 11. Раздвоение Ивана', 1014, '#336633'],
+        ['Глава 12. Черная магия и ее разоблачение', 3948, '#336633'],
+        ['Глава 13. Явление героя', 5693, '#336633'],
+        ['Глава 14. Слава петуху!', 2471, '#336633'],
+        ['Глава 15. Сон Никанора Ивановича', 3300, '#336633'],
+        ['Глава 16. Казнь', 3678, '#990000'],
+        ['Глава 17. Беспокойный день', 3366, '#336633'],
+        ['Глава 18. Неудачные визитеры', 5695, '#336633'],
+        ['Глава 19. Маргарита', 3778, '#336633'],
+        ['Глава 20. Крем Азазелло', 1465, '#336633'],
+        ['Глава 21. Полет', 3969, '#336633'],
+        ['Глава 22. При свечах', 3846, '#336633'],
+        ['Глава 23. Великий бал у Сатаны', 4391, '#336633'],
+        ['Глава 24. Извлечение Мастера', 6595, '#336633'],
+        ['Глава 25. Как прокуратор пытался спасти Иуду из Кириафа', 2938, '#990000'],
+        ['Глава 26. Погребение', 6357, '#990000'],
+        ['Глава 27. Конец квартиры № 50', 4756, '#336633'],
+        ['Глава 28. Последние похождения Коровьева и Бегемота', 3422, '#336633'],
+        ['Глава 29. Судьба Мастера и Маргариты определена', 1313, '#336633'],
+        ['Глава 30. Пора! Пора!', 3515, '#336633'],
+        ['Глава 31. На Воробьевых горах', 779, '#336633'],
+        ['Глава 32. Прощение и вечный приют', 1845, '#336633'],
+        ['Эпилог', 3788, '#336633']
+      ]);
+
+      var options = {
+        title: 'Длина глав',
+        chartArea: {
+            top: '5%',
+            width: '100%',
+            height: '80%',
+            left: '30%',
+            bottom: '8%'},
+        height: 1200,
+        width: 1440,
+        hAxis: {
+          title: 'Слов',
+          viewWindow: {
+              min: 500,
+              max: 7000
+          }
+        },
+        vAxis: {
+          title: 'Главы'
+        },
+        legend: {position: 'none'},
+        fontSize: 12,
+
+        explorer: {
+            actions: ['dragToZoom', 'rightClickToReset'],
+            keepInBounds: true,
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='begemot.png') }}"
+</head>
+<body>
+<nav class="navbar navbar-static-top" >
+  <div class="navbar-default container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ main_url }}">
+        <img alt="M&M" src="{{ url_for('static', filename='begemot.png') }}" width="85" height="60" align="top">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">... и как</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="{{ keywords_url }}">... и какими словами </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ words_url }}">... и как длинно: главы </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
+          </ul>
+          </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Погоня </a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#">Другие места</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div id="chart_div" align="center"></div>
+</body>
+</html>
