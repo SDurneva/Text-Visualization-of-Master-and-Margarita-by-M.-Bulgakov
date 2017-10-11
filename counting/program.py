@@ -7,6 +7,7 @@ import sqlite3
 import json
 import TF_IDF
 from collections import OrderedDict
+from decimal import *
 
 morph = pymorphy2.MorphAnalyzer()
 
@@ -372,9 +373,30 @@ def make_wjson():
     pairs = OrderedDict(zip(names, chars))
     print(pairs)
 
+def get_tfidf():
+    conn = sqlite3.connect('/Users/sea_fog/Documents/github/Text-Visualization-of-Master-and-Margarita-by-M.-Bulgakov/counting/database2.db')
+    c = conn.cursor()
+    chapts = []
+    for i in range (1, 34):
+        command = 'SELECT * FROM chapt' + str(i) + '_tfidf WHERE tf_idf > 0.003'
+        c.execute(command)
+        chapt = []
+        for el in c.fetchall():
+            el = list(el)
+            el[1] = "%.3f" % (el[1])
+            chapt.append(el)
+        chapts.append(chapt)
+    f = open('tfidfs.txt', 'a', encoding='utf-8')
+    i = 1
+    for chapt in chapts:
+        f.write('ГЛАВА' + str(i))
+        i += 1
+        for el in chapt:
+            f.write(str(el) + ';' + '\n')
+        f.write('\n' + '\n' + '\n')
+
     # f = open('website/static/chars.json', 'w', encoding='utf-8')
     # f.write(json.dumps(pairs))
-
 
 
 
@@ -383,10 +405,11 @@ def main():
     # loop_open()
     # count_char_names()
     # count_gost_plus()
-    calc_tf_idf(make_lists(load_stopwords()))
+    # calc_tf_idf(make_lists(load_stopwords()))
     # sent_length()
     # make_wjson()
     # load_stopwords()
+    get_tfidf()
 
 
 
