@@ -35,14 +35,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">... и как</a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ chapters_url }}">О ком</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -53,27 +46,15 @@
               <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
           </ul>
           </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Погоня </a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="#">Другие места</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ map_url }}">Где</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Контакты</a></li>
+        <li><a href="{{ contactsreferences_url }}">Контакты и ссылки</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div id="chart_div" align="center"></div>
-</body>
-</html>
-</title>
-</head>
-<body>
+<h1 style="margin-left: 20%; margin-bottom: 2%">Ключевые слова по tf-idf</h1>
 <table class="table borderless" align="center">
       <tr>
         <td align="center" valign="bottom"><!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
@@ -90,7 +71,7 @@
 </div>
 <p><a href='https://worditout.com/word-cloud/2494971/private/2d0ac58c057998d027144203ac4bb7a2' title='See &quot;2&quot; on WordItOut.com'></a></p>
             <p>Глава 2. Понтий Пилат</p></td>
-        <td align="center" valign="bottom"><<!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
+        <td align="center" valign="bottom"><!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
 <div style='width:auto;height:auto;'><!-- You may use this wrapping div to restrict the height or width -->
 	<script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/2495012/private/fc36d3a233da0fff7db8ff14df74130d/embed.js'></script>
 	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2495012/private/fc36d3a233da0fff7db8ff14df74130d' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;3&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
@@ -120,7 +101,7 @@
 	<script type='text/javascript' charset='utf-8'  src='https://worditout.com/word-cloud/2495129/private/ec25c6480dbd4500b400782b6494ed6c/embed.js'></script>
 	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2495129/private/ec25c6480dbd4500b400782b6494ed6c' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;6&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
 </div>
-<p><a href='https://worditout.com/word-cloud/2495129/private/ec25c6480dbd4500b400782b6494ed6c' title='See &quot;6&quot; on WordItOut.com'></a></p>Глава 6. Шизофрения, как и было сказано</p></td>
+<p><a href='https://worditout.com/word-cloud/2495129/private/ec25c6480dbd4500b400782b6494ed6c' title='See &quot;6&quot; on WordItOut.com'></a></p><p>Глава 6. Шизофрения, как и было сказано</p></td>
       </tr>
       <tr>
           <td align="center" valign="bottom">
@@ -130,7 +111,7 @@
 	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2495143/private/8ec44d5106acb9a73e68285692a3d6f1' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;7&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
 </div>
 <p><a href='https://worditout.com/word-cloud/2495143/private/8ec44d5106acb9a73e68285692a3d6f1' title='See &quot;7&quot; on WordItOut.com'></a>
-</p>Глава 7. Нехорошая квартира</p></td>
+</p><p>Глава 7. Нехорошая квартира</p></td>
         <td align="center" valign="bottom">
            <!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
 <div style='width:auto;height:auto;'><!-- You may use this wrapping div to restrict the height or width -->
@@ -154,7 +135,7 @@
 	<noscript><p style='text-align:center;font-size:xx-small;overflow:auto;height:100%;'><a href='https://worditout.com/word-cloud/2495174/private/f1ff107d5199bd9c62ad951b6c043da0' title='Click to go to this word&nbsp;cloud on WordItOut.com'>&quot;10&quot;</a><br />Click on the link above to see this word&nbsp;cloud at <a href='https://worditout.com' title='Transform your text into word&nbsp;clouds!'>WordItOut</a>. You may also view it on this website if you enable JavaScript (see your web browser settings).</p></noscript>
 </div>
 <p><a href='https://worditout.com/word-cloud/2495174/private/f1ff107d5199bd9c62ad951b6c043da0' title='See &quot;10&quot; on WordItOut.com'></a></p>
-            <p>Глава 10. Вести из Ялты</p</td>
+            <p>Глава 10. Вести из Ялты</p></td>
         <td align="center" valign="bottom">
            <!-- Creative Commons Licence (by-nc-nd). See worditout.com for details -->
 <div style='width:auto;height:auto;'><!-- You may use this wrapping div to restrict the height or width -->
@@ -356,4 +337,5 @@
       </tr>
     </table>
 </body>
+      <p align="center" style="font-size: 12px; margin-top: 3%">2017, Школа лингвистики НИУ ВШЭ</p>
 </html>

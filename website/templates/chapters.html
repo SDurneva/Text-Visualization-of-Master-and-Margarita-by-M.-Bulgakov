@@ -1,7 +1,7 @@
 <html>
   <head>
       <meta charset="UTF-8">
-      <title>Главы</title>
+      <title>Роль персонажей в главах</title>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -53,14 +53,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">... и как</a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ chapters_url }}">О ком</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -71,20 +64,15 @@
               <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
           </ul>
           </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Погоня </a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="#">Другие места</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ map_url }}">Где</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Контакты</a></li>
+        <li><a href="{{ contactsreferences_url }}">Контакты и ссылки</a></li>
       </ul>
     </div>
   </div>
+
+<h1 style="margin-left: 20%; margin-bottom: 2%">Роль персонажей в главах</h1>
       <table class="table borderless" align="center">
       <tr>
           {% for m in range(1, 34, 3) %}
@@ -94,7 +82,7 @@
       </tr>
           {% endfor %}
     </table>
-      <p align="center">2017, Школа лингвистики НИУ ВШЭ</p>
+      <p align="center" style="font-size: 12px; margin-top: 3%">2017, Школа лингвистики НИУ ВШЭ</p>
   </body>
 </html>
 

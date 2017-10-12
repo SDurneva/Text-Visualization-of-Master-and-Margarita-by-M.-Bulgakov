@@ -32,3 +32,32 @@
 .borderless td, .borderless tr {
     border: none;
 }
+
+body {
+    padding: 0 20px;
+}
+header {
+    background: lightblue;
+    padding: 1em 0;
+}
+
+header h2 {font-size:1.2rem;margin:10px 0;}
+
+
+.flag {
+    width: 29px;
+    height: 20px;
+    display: inline-block;
+    background: red;
+}
+
+@media (min-width:768px) {
+
+    header h2 {font-size:1.3rem;margin:0;}
+
+}
+
+
+h1 {
+    margin-left: 30%;
+}

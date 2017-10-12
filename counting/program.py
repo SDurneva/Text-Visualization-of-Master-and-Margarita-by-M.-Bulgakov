@@ -395,8 +395,7 @@ def get_tfidf():
             f.write(str(el) + ';' + '\n')
         f.write('\n' + '\n' + '\n')
 
-    # f = open('website/static/chars.json', 'w', encoding='utf-8')
-    # f.write(json.dumps(pairs))
+
 
 
 

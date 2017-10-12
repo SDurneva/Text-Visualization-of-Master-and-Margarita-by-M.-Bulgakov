@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Предложения</title>
+    <title>Длина предложений</title>
 
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -58,7 +58,7 @@ function drawBasic() {
             left: '30%',
             bottom: '8%'},
         height: 1200,
-        width: 1440,
+        width: 1390,
         hAxis: {
           title: 'Средняя длина предложения',
           viewWindow: {
@@ -109,16 +109,7 @@ function drawBasic() {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О ком <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">... и как</a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="#">... и с кем</a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="{{ chapters_url }}">... и в какой главе</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ chapters_url }}">О ком</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">О чем <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -129,21 +120,17 @@ function drawBasic() {
               <li><a href="{{ sents_url }}">... и как длинно: предложения в главах </a> </li>
           </ul>
           </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Где <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Погоня </a></li>
-              <li role="separator" class="divider"></li>
-            <li><a href="#">Другие места</a></li>
-          </ul>
-        </li>
+        <li><a href="{{ map_url }}">Где</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Контакты</a></li>
+        <li><a href="{{ contactsreferences_url }}">Контакты и ссылки</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<h1 style="margin-left: 20%; margin-bottom: 2%">Длина предложений</h1>
 <div id="chart_div" align="center"></div>
+
+      <p align="center" style="font-size: 12px; margin-top: 3%">2017, Школа лингвистики НИУ ВШЭ</p>
 </body>
 </html>
